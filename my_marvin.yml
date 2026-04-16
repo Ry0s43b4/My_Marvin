@@ -1,0 +1,335 @@
+
+configuration-as-code: {
+  }
+credentials:
+  folder: {
+    }
+  providerImpl: {
+    }
+  system:
+    domainCredentials:
+    - domain: {
+        }
+  user: {
+    }
+jenkins:
+  authorizationStrategy:
+    roleBased:
+      roles:
+        global:
+        - entries:
+          - user: "chocolateen"
+          name: "admin"
+          pattern: ".*"
+          permissions:
+          - "Overall/Administer"
+        - entries:
+          - user: "i_dont_know"
+          name: "ape - Pedagogical team member"
+          pattern: ".*"
+          permissions:
+          - "Job/Build"
+          - "Job/Workspace"
+        - entries:
+          - user: "nasso"
+          name: "assist - Assistant"
+          pattern: ".*"
+          permissions:
+          - "Job/Read"
+          - "Job/Workspace"
+        - entries:
+          - user: "vaugie_g"
+          name: "gorilla - Group Obsessively Researching Innovation Linked to Learning\
+            \ and Accomplishment"
+          pattern: ".*"
+          permissions:
+          - "Job/Cancel"
+          - "Job/Build"
+          - "Job/Delete"
+          - "Job/Create"
+          - "Job/Read"
+          - "Job/Configure"
+          - "Job/Workspace"
+  crumbIssuer: "standard"
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - "hudson.util.DoubleLaunchChecker"
+  labelAtoms:
+  - name: "built-in"
+  log: {
+    }
+  markupFormatter: "plainText"
+  mode: NORMAL
+  nodeMonitors:
+  - "architecture"
+  - "clock"
+  - diskSpace:
+      freeSpaceThreshold: "1GiB"
+      freeSpaceWarningThreshold: "2GiB"
+  - "swapSpace"
+  - tmpSpace:
+      freeSpaceThreshold: "1GiB"
+      freeSpaceWarningThreshold: "2GiB"
+  - "responseTime"
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy:
+    roleBased:
+      forceExistingJobs: false
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "chocolateen"
+        name: "Hugo"
+        properties:
+        - theme:
+            theme: "noOp"
+        - "consoleUrlProvider"
+        - "viewsTabBar"
+        - myView:
+            viewsTabBar: "standard"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - "experimentalFlags"
+        - mailer:
+            emailAddress: "hugo.chocolateen@epitech.eu"
+        - "apiToken"
+      - id: "i_dont_know"
+        name: "Jeremy"
+        properties:
+        - theme:
+            theme: "noOp"
+        - "apiToken"
+        - "consoleUrlProvider"
+        - "viewsTabBar"
+        - myView:
+            viewsTabBar: "standard"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - "experimentalFlags"
+        - mailer:
+            emailAddress: "jeremy.idontknow@epitech.eu"
+      - id: "nasso"
+        name: "Nassim"
+        properties:
+        - theme:
+            theme: "noOp"
+        - "apiToken"
+        - "consoleUrlProvider"
+        - "viewsTabBar"
+        - myView:
+            viewsTabBar: "standard"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - "experimentalFlags"
+        - mailer:
+            emailAddress: "nassim.nasso@epitech.eu"
+      - id: "vaugie_g"
+        name: "Garance"
+        properties:
+        - theme:
+            theme: "noOp"
+        - "apiToken"
+        - "consoleUrlProvider"
+        - "viewsTabBar"
+        - myView:
+            viewsTabBar: "standard"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - "experimentalFlags"
+        - mailer:
+            emailAddress: "garance.vaugie@epitech.eu"
+  slaveAgentPort: 50000
+  systemMessage: "Welcome to the Chocolatine-Powered Marvin Jenkins Instance."
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+appearance:
+  consoleUrlProvider: {
+    }
+  pipelineGraphView:
+    showGraphOnBuildPage: false
+    showGraphOnJobPage: false
+    showStageDurations: false
+    showStageNames: false
+  prism:
+    theme: PRISM
+  themeManager:
+    disableUserThemes: false
+    theme: "noOp"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  apiTokenProperty: {
+    }
+  contentSecurityPolicy:
+    enforce: false
+  cps:
+    hideSandbox: false
+  crumb: {
+    }
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
+  prism:
+    protectSourceCodeByPermission: false
+  queueItemAuthenticator: {
+    }
+  scriptApproval:
+    forceSandbox: false
+  updateSiteWarningsConfiguration: {
+    }
+unclassified:
+  administrativeMonitorsConfiguration: {
+    }
+  artifactManager: {
+    }
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  casCGlobalConfig: {
+    }
+  computerRetentionCheckInterval: {
+    }
+  defaultDisplayUrlProvider: {
+    }
+  defaultFolderConfiguration: {
+    }
+  defaultView: {
+    }
+  email-ext:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      Check console output at $BUILD_URL to view the results.
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    mailAccount: {
+      }
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    throttlingEnabled: false
+    watchingEnabled: false
+  enrichedSummaryConfig:
+    enrichedSummaryEnabled: false
+    globalBuildScanDetection: false
+    httpClientDelayBetweenRetriesInSeconds: 1
+    httpClientMaxRetries: 3
+    httpClientTimeoutInSeconds: 1
+  envVarsFilter: {
+    }
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://localhost:8080/github-webhook/"
+  globalDefaultFlowDurabilityLevel: {
+    }
+  globalLibraries: {
+    }
+  globalTimeOutConfiguration:
+    operations:
+    - "abortOperation"
+    overwriteable: false
+  globalUntrustedLibraries: {
+    }
+  injectionConfig:
+    allowUntrusted: false
+    checkForBuildAgentErrors: false
+    enabled: false
+    enforceUrl: false
+    gradleCaptureTaskInputFiles: true
+    injectCcudExtension: false
+    injectMavenExtension: false
+    mavenCaptureGoalInputFiles: true
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "http://localhost:8080/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  metricsAccessKey: {
+    }
+  myView: {
+    }
+  nodeProperties: {
+    }
+  plugin: {
+    }
+  pollSCM:
+    pollingThreadCount: 10
+  projectNamingStrategy: {
+    }
+  proxyConfigurationManager: {
+    }
+  quietPeriod: {
+    }
+  resourceRoot: {
+    }
+  scmGit:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  scmRetryCount: {
+    }
+  shell: {
+    }
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+  usageStatistics: {
+    }
+  viewsTabBar: {
+    }
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
