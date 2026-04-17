@@ -20,12 +20,14 @@ jenkins:
         - entries:
           - user: "chocolateen"
           name: "admin"
+          description: "Marvin master"
           pattern: ".*"
           permissions:
           - "Overall/Administer"
         - entries:
           - user: "i_dont_know"
           name: "ape"
+          description: "Pedagogical team member"
           pattern: ".*"
           permissions:
           - "Job/Build"
@@ -33,6 +35,7 @@ jenkins:
         - entries:
           - user: "nasso"
           name: "assist"
+          description: "Assistant"
           pattern: ".*"
           permissions:
           - "Job/Read"
@@ -40,6 +43,7 @@ jenkins:
         - entries:
           - user: "vaugie_g"
           name: "gorilla"
+          description: "Group Obsessively Researching Innovation Linked to Learning and Accomplishment"
           pattern: ".*"
           permissions:
           - "Job/Cancel"
@@ -195,6 +199,8 @@ security:
     allowedOnController: false
   gitHostKeyVerificationConfiguration:
     sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: true
   prism:
     protectSourceCodeByPermission: false
   queueItemAuthenticator: {
