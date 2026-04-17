@@ -25,22 +25,21 @@ jenkins:
           - "Overall/Administer"
         - entries:
           - user: "i_dont_know"
-          name: "ape - Pedagogical team member"
+          name: "ape"
           pattern: ".*"
           permissions:
           - "Job/Build"
           - "Job/Workspace"
         - entries:
           - user: "nasso"
-          name: "assist - Assistant"
+          name: "assist"
           pattern: ".*"
           permissions:
           - "Job/Read"
           - "Job/Workspace"
         - entries:
           - user: "vaugie_g"
-          name: "gorilla - Group Obsessively Researching Innovation Linked to Learning\
-            \ and Accomplishment"
+          name: "gorilla"
           pattern: ".*"
           permissions:
           - "Job/Cancel"
