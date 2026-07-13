@@ -1,13 +1,12 @@
-folder('Tools') {
+folder('Tools')
+{
     description('Folder for miscellaneous tools.')
 }
 
-
-freeStyleJob('Tools/clone-repository') {
+freeStyleJob('Tools/clone-repository')
+{
     parameters {
         stringParam('GIT_REPOSITORY_URL', '', 'Git URL of the repository to clone')
-    }
-    triggers {
     }
     wrappers {
         preBuildCleanup()
@@ -15,15 +14,13 @@ freeStyleJob('Tools/clone-repository') {
     steps {
         shell('git clone $GIT_REPOSITORY_URL .')
     }
-
 }
 
-freeStyleJob('Tools/SEED') {
+freeStyleJob('Tools/SEED')
+{
     parameters {
         stringParam('GITHUB_NAME', '', 'GitHub repository owner/repo_name (e.g.: "EpitechIT31000/chocolatine")')
         stringParam('DISPLAY_NAME', '', 'Display name for the job')
-    }
-    triggers {
     }
     steps {
         dsl {
